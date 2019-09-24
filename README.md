@@ -61,7 +61,7 @@ const routes: Routes = [
     { path: '', component: SecondComponent }
   ];
 ```
-
+**Note:** *Declare the components in their respective modules and eliminate the declarations of the components in the main module of the application*
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
