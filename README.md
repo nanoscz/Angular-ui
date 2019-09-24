@@ -2,13 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
 
-## Command
-
+### Command
     ng g c components/first
     ng g c components/second
 
-
-## Routing
+### Routing
 
 
 ``` js
@@ -19,7 +17,7 @@ const routes: Routes = [
 
 ```
 
-## Html
+### Html
 
 ``` html
 <button type="input" [routerLink]="[ '/first' ]"> first </button>
@@ -27,6 +25,41 @@ const routes: Routes = [
 <main>
   <router-outlet></router-outlet>
 </main>
+```
+
+## Applying lazy loading to the routes
+
+### Generate Module
+
+  ```
+  ng g m components/first --routing
+  ng g m components/second --routing
+  ```
+
+### Change routing
+
+``` js
+const routes: Routes = [
+  { path: 'first', loadChildren: './components/first/first.module#FirstModule' },
+  { path: 'second', loadChildren: './components/second/second.module#SecondModule' }
+];
+```
+
+### Add route FirstRoutingModule
+``` js
+  import { FirstComponent } from './first.component';
+
+  const routes: Routes = [
+    { path: '', component: FirstComponent}
+  ];
+```
+### Add route SecondRoutingModule
+``` js
+  import { SecondComponent } from './second.component';
+
+  const routes: Routes = [
+    { path: '', component: SecondComponent }
+  ];
 ```
 
 ## Development server
