@@ -2,6 +2,33 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
 
+## Command
+
+    ng g c components/first
+    ng g c components/second
+
+
+## Routing
+
+
+``` js
+const routes: Routes = [
+  { path: 'first', component: FirstComponent },
+  { path: 'second', component: SecondComponent }
+];
+
+```
+
+## Html
+
+``` html
+<button type="input" [routerLink]="[ '/first' ]"> first </button>
+<button type="input" [routerLink]="[ '/second' ]"> second </button>
+<main>
+  <router-outlet></router-outlet>
+</main>
+```
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
